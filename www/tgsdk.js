@@ -40,7 +40,9 @@ module.exports = {
         console.log("[cordova] TGSDK.preload");
         var self = this;
         cordova.exec(
-            function(evt, ret) {
+            function(msg) {
+                var evt = msg[0];
+                var ret = msg[1];
                 console.log("[cordova] TGSDK "+evt+"("+ret+")");
                 if (self[evt]) {
                     self[evt](ret);
@@ -60,7 +62,9 @@ module.exports = {
         console.log("[cordova] TGSDK.showAd("+scene+")");
         var self = this;
         cordova.exec(
-            function(evt, ret) {
+            function(msg) {
+                var evt = msg[0];
+                var ret = msg[1];
                 console.log("[cordova] TGSDK "+evt+"("+ret+")");
                 if (self[evt]) {
                     self[evt](ret);
