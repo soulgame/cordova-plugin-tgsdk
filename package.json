@@ -1,0 +1,42 @@
+{
+  "name": "cordova-plugin-tgsdk",
+  "version": "1.6.7",
+  "description": "YoMob AD SDK for cordova",
+  "cordova": {
+    "id": "cordova-plugin-tgsdk",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soulgame/cordova-plugin-tgsdk.git"
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "ad",
+    "video",
+    "vungle",
+    "unityads",
+    "adcolony",
+    "admob",
+    "applovin",
+    "appnext",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "yomob",
+  "license": "Apache 2.0 License",
+  "bugs": {
+    "url": "https://github.com/soulgame/cordova-plugin-tgsdk/issues"
+  },
+  "homepage": "https://github.com/soulgame/cordova-plugin-tgsdk#readme"
+}

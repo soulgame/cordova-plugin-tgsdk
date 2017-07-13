@@ -1,0 +1,33 @@
+repositories{    
+    jcenter()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile(name:'TGSDK.1.6.7', ext:'aar')
+    compile(name: 'TGSDKADAdcolony.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADAdmob.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADApplovin.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADAppnext.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADCentrixlink.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADChartboost.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADDomob.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADFacebook.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADInmobi.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADLeadbolt.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADMobvista.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADOneway.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADTapjoy.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADUnityads.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADVungle.1.6.7', ext: 'aar')
+}
+
+android {
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}
+

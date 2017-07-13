@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-tgsdk" version="1.6.7">
+    <name>Cordova TGSDK Plugin</name>
+    <description>YoMob AD SDK</description>
+    <author>yomob</author>
+    <keywords>yomob,ad,vungle,unityads,adcolony,admob,facebook,oneway,inmobi,applovin,appnext</keywords>
+    <license>Apache 2.0 License</license>
+    <engines>
+        <engine name="cordova" version="7.0.1" />
+    </engines> 
+    <js-module src="www/tgsdk.js" name="tgsdk">
+        <clobbers target="window.tgsdk" />
+    </js-module>
+    <platform name="android">
+    	<!-- for CN -->
+        <framework src="src/android/cordova-plugin-tgsdk.cn.gradle" custom="true" type="gradleReference" />
+        <!-- for GooglePlay
+        <framework src="src/android/cordova-plugin-tgsdk.gp.gradle" custom="true" type="gradleReference" />
+        -->
+        <resource-file src="tgsdk/android/TGSDK.1.6.7.aar" target="libs/TGSDK.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADAdcolony.1.6.7.aar" target="libs/TGSDKADAdcolony.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADAdmob.1.6.7.aar" target="libs/TGSDKADAdmob.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADApplovin.1.6.7.aar" target="libs/TGSDKADApplovin.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADAppnext.1.6.7.aar" target="libs/TGSDKADAppnext.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADCentrixlink.1.6.7.aar" target="libs/TGSDKADCentrixlink.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADChartboost.1.6.7.aar" target="libs/TGSDKADChartboost.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADDianjoy.1.6.7.aar" target="libs/TGSDKADDianjoy.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADDomob.1.6.7.aar" target="libs/TGSDKADDomob.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADFacebook.1.6.7.aar" target="libs/TGSDKADFacebook.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADInmobi.1.6.7.aar" target="libs/TGSDKADInmobi.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADLeadbolt.1.6.7.aar" target="libs/TGSDKADLeadbolt.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADMobvista.1.6.7.aar" target="libs/TGSDKADMobvista.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADOneway.1.6.7.aar" target="libs/TGSDKADOneway.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADTapjoy.1.6.7.aar" target="libs/TGSDKADTapjoy.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADUnityads.1.6.7.aar" target="libs/TGSDKADUnityads.1.6.7.aar" />
+        <resource-file src="tgsdk/android/TGSDKADVungle.1.6.7.aar" target="libs/TGSDKADVungle.1.6.7.aar" />
+        <resource-file src="tgsdk/android/dagger-2.7.jar" target="libs/dagger-2.7.jar" />
+        <resource-file src="tgsdk/android/eventbus-2.2.1.jar" target="libs/eventbus-2.2.1.jar" />
+        <resource-file src="tgsdk/android/javax.inject-1.jar" target="libs/javax.inject-1.jar" />
+        <resource-file src="tgsdk/android/okhttp-3.4.2.jar" target="libs/okhttp-3.4.2.jar" />
+        <resource-file src="tgsdk/android/okio-1.11.0.jar" target="libs/okio-1.11.0.jar" />
+        <resource-file src="tgsdk/android/picasso-2.5.2.jar" target="libs/picasso-2.5.2.jar" />
+        <resource-file src="tgsdk/android/rxjava-1.2.0.jar" target="libs/rxjava-1.2.0.jar" />
+        <config-file target="config.xml" parent="/*">
+            <feature name="TGSDKCordova">
+                <param name="android-package" value="com.yomob.tgsdk.cordova.plugin.TGSDKCordova"/>
+            </feature>
+        </config-file>
+        
+        <edit-config file="AndroidManifest.xml" target="/manifest" mode="merge">
+    		<manifest xmlns:tools="http://schemas.android.com/tools" />
+		</edit-config>
+        
+        <config-file target="AndroidManifest.xml" parent="/*">
+    		<uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+            <uses-permission android:name="android.permission.GET_TASKS" />
+            <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+        </config-file>
+            
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+    		<!-- Inmobi -->
+            <activity 
+                android:name="com.inmobi.rendering.InMobiAdActivity"
+                android:configChanges="keyboardHidden|orientation|keyboard|smallestScreenSize|screenSize"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                android:hardwareAccelerated="true" />
+            <receiver
+                android:name="com.inmobi.commons.core.utilities.uid.ImIdShareBroadCastReceiver"
+                android:enabled="true"
+                android:exported="true" >
+                    <intent-filter>
+                        <action android:name="com.inmobi.share.id" />
+                    </intent-filter>
+             </receiver>
+
+            <!-- Chartboost -->
+            <activity android:name="com.chartboost.sdk.CBImpressionActivity"
+                android:excludeFromRecents="true"
+                android:hardwareAccelerated="true"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+                android:configChanges="keyboardHidden|orientation|screenSize" />
+
+            <!-- Centrixlink -->
+            <activity android:name="com.centrixlink.SDK.FullScreenADActivity"
+                android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                android:process=":adprocess"
+                tools:ignore="InnerclassSeparator" />
+
+            <activity android:name="com.centrixlink.SDK.ResizedVideoADActivity"
+                android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+                android:hardwareAccelerated="true"
+                android:process=":adprocess"
+                tools:ignore="InnerclassSeparator" />
+
+            <service
+                android:name="com.centrixlink.SDK.service.CentrixlinkService"
+                android:exported="false" />
+
+            <!-- Leadbolt -->
+            <activity
+                android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+                android:name="com.apptracker.android.module.AppModuleActivity"
+                android:hardwareAccelerated="false">
+            </activity>
+            <service android:name="com.apptracker.android.track.AppTrackerService" />
+
+            <!-- Tapjoy -->
+            <activity
+                android:name="com.tapjoy.TJAdUnitActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:hardwareAccelerated="true"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+
+            <activity
+                android:name="com.tapjoy.mraid.view.ActionHandler"
+                android:configChanges="orientation|keyboardHidden|screenSize" />
+
+            <activity
+                android:name="com.tapjoy.mraid.view.Browser"
+                android:configChanges="orientation|keyboardHidden|screenSize" />
+
+            <activity
+                android:name="com.tapjoy.TJContentActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                android:hardwareAccelerated="true" />
+
+            <!-- UnityAds -->
+            <activity
+                android:name="com.unity3d.ads.adunit.AdUnitActivity"
+                android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+                android:hardwareAccelerated="true"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+            <activity
+                android:name="com.unity3d.ads.adunit.AdUnitSoftwareActivity"
+                android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+                android:hardwareAccelerated="false"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+            <!-- Mobvista -->
+            <activity
+                android:name="com.mobvista.msdk.reward.player.MVRewardVideoActivity"
+                android:screenOrientation="landscape"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+            <!-- TG CP -->
+            <activity android:name="com.soulgame.sgsdk.adsdk.TGCPADActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+            <activity android:name="com.soulgame.sgsdk.tgsdklib.testsuite.TestSuiteActivity"></activity>
+            <!-- TG ADX -->
+            <activity
+                android:name="com.yomob.tgsdklib.TGVideoActivity"
+                android:launchMode="singleTask"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+            <activity
+                android:name="com.yomob.tgsdklib.TGWebActivity"
+                android:launchMode="singleTask"
+                android:screenOrientation="landscape"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+            <!-- DianJoy -->
+            <service 
+                android:name="com.dianjoy.video.DianViewService" 
+                android:process=":playgame" />
+            <activity
+                android:name="com.dianjoy.video.DianViewActivity"
+                android:launchMode="singleTask"
+                android:screenOrientation="landscape"
+                android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"/>
+            <activity 
+                android:name="com.dianjoy.video.DianViewAdBrowser" 
+                android:configChanges="orientation|screenSize"/>
+
+            <!-- Facebook -->
+            <activity
+                android:name="com.facebook.ads.AudienceNetworkActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize" />
+
+            <!-- Applovin -->
+            <activity android:name="com.applovin.adview.AppLovinInterstitialActivity" />
+            <activity android:name="com.applovin.adview.AppLovinConfirmationActivity" />
+
+            <!-- Vungle -->
+            <activity
+                android:name="com.vungle.publisher.VideoFullScreenAdActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+            <activity android:name="com.vungle.publisher.MraidFullScreenAdActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+
+            <!-- Domob -->
+            <activity 
+                android:name="com.pad.android_independent_video_sdk.view.DvxVideoActivity"
+                android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+                android:configChanges="orientation|keyboard|screenSize|screenLayout"/>
+            <service android:name="com.pad.android_independent_video_sdk.IndependentService"/>
+
+            <!-- Appnext -->
+            <service android:name="com.appnext.core.AdsService" />
+            <activity android:name="com.appnext.ads.interstitial.InterstitialActivity"
+                      android:hardwareAccelerated="true"
+                      android:configChanges="keyboardHidden|orientation|screenSize"
+                      android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+            <activity android:name="com.appnext.ads.fullscreen.FullscreenActivity"
+                      android:hardwareAccelerated="true"
+                      android:configChanges="keyboardHidden|orientation|screenSize"
+                      android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+            <!-- AdMob -->
+            <activity android:name="com.google.android.gms.ads.AdActivity"
+                android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+                android:theme="@android:style/Theme.Translucent" />
+
+            <!-- OneWay -->
+            <activity
+                android:name="mobi.oneway.sdk.AdShowActivity"
+                android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+                android:hardwareAccelerated="true"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+
+            <!-- AdColony -->
+            <activity android:name="com.jirbo.adcolony.AdColonyOverlay"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+            <activity android:name="com.jirbo.adcolony.AdColonyFullscreen"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+            <activity android:name="com.jirbo.adcolony.AdColonyBrowser"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+		</config-file>
+
+    <source-file src="src/com/yomob/tgsdk/cordova/plugin/TGSDKCordova.java" target-dir="src/com/yomob/tgsdk/cordova/plugin" />
+    </platform>
+ </plugin>

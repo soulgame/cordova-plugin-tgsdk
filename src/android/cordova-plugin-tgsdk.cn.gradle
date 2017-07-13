@@ -1,0 +1,23 @@
+repositories{    
+    jcenter()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile(name:'TGSDK.1.6.7', ext:'aar')
+    compile(name: 'TGSDKADCentrixlink.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADDianjoy.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADDomob.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADOneway.1.6.7', ext: 'aar')
+    compile(name: 'TGSDKADVungle.1.6.7', ext: 'aar')
+}
+
+android {
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}
+
