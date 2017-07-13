@@ -12,6 +12,7 @@
         <clobbers target="window.tgsdk" />
     </js-module>
     <platform name="android">
+        <dependency id="android.support.v4@25.3.1" />
     	<!-- for CN -->
         <framework src="src/android/cordova-plugin-tgsdk.cn.gradle" custom="true" type="gradleReference" />
         <!-- for GooglePlay
@@ -34,6 +35,7 @@
         <resource-file src="tgsdk/android/TGSDKADTapjoy.1.6.7.aar" target="libs/TGSDKADTapjoy.1.6.7.aar" />
         <resource-file src="tgsdk/android/TGSDKADUnityads.1.6.7.aar" target="libs/TGSDKADUnityads.1.6.7.aar" />
         <resource-file src="tgsdk/android/TGSDKADVungle.1.6.7.aar" target="libs/TGSDKADVungle.1.6.7.aar" />
+        
         <resource-file src="tgsdk/android/dagger-2.7.jar" target="libs/dagger-2.7.jar" />
         <resource-file src="tgsdk/android/eventbus-2.2.1.jar" target="libs/eventbus-2.2.1.jar" />
         <resource-file src="tgsdk/android/javax.inject-1.jar" target="libs/javax.inject-1.jar" />
@@ -41,6 +43,9 @@
         <resource-file src="tgsdk/android/okio-1.11.0.jar" target="libs/okio-1.11.0.jar" />
         <resource-file src="tgsdk/android/picasso-2.5.2.jar" target="libs/picasso-2.5.2.jar" />
         <resource-file src="tgsdk/android/rxjava-1.2.0.jar" target="libs/rxjava-1.2.0.jar" />
+        <resource-file src="tgsdk/android/support-v4-24.1.0.jar" target="libs/support-v4-24.1.0.jar" />
+        <resource-file src="tgsdk/android/internal_impl-24.1.0.jar" target="libs/internal_impl-24.1.0.jar" />
+        
         <config-file target="config.xml" parent="/*">
             <feature name="TGSDKCordova">
                 <param name="android-package" value="com.yomob.tgsdk.cordova.plugin.TGSDKCordova"/>

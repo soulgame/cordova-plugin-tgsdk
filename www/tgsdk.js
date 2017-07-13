@@ -68,5 +68,12 @@ module.exports = {
             },
             null, 'TGSDKCordova', 'showAd', [scene]
         );
+    },
+    showTestView: function(scene) {
+        console.log("[cordova] TGSDK.showTestView("+scene+")");
+        var self = this;
+        cordova.exec(
+            null, null, 'TGSDKCordova', 'showTestView', [scene]
+        );
     }
 };
