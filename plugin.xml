@@ -11,6 +11,7 @@
     <js-module src="www/tgsdk.js" name="tgsdk">
         <clobbers target="window.tgsdk" />
     </js-module>
+    <!-- android -->
     <platform name="android">
         <dependency id="android.support.v4@25.3.1" />
     	<!-- for CN -->
@@ -250,5 +251,83 @@
 		</config-file>
 
     <source-file src="src/com/yomob/tgsdk/cordova/plugin/TGSDKCordova.java" target-dir="src/com/yomob/tgsdk/cordova/plugin" />
+    </platform>
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="TGSDKCordova">
+                <param name="ios-package" value="TGSDKCordova" />
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/TGSDKCordova.h" />
+        <header-file src="tgsdk/ios/include/TGSDK/TGSDK.h" />
+        <source-file src="src/ios/TGSDKCordova.m" />
+        
+        <source-file src="tgsdk/ios/libTGSDK.1.6.7.a" framework="true" />
+        
+        <framework src="tgsdk/ios/frameworks/AdColony.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/AppLovinSDK.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/AppTracker.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/AppnextLib.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/AppnextSDKCore.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/Centrixlink.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/ChanceAdSDK.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/Chartboost.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/DomobVideoSDK.framework	" custom="true" />
+        <framework src="tgsdk/ios/frameworks/FBAudienceNetwork.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/FMDB.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/GoogleMobileAds.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/InMobi.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/MVSDK.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/MVSDKInterstitial.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/MVSDKReward.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/OneWaySDK.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/Tapjoy.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/UnityAds.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/VungleSDK.framework" custom="true" />
+        
+        
+        <resource-file src="tgsdk/ios/resources/__vungle.db" />
+        <resource-file src="tgsdk/ios/resources/ChanceAdRes.bundle" />
+        <resource-file src="tgsdk/ios/resources/IndependentVideoBundle.bundle" />
+        <resource-file src="tgsdk/ios/resources/TapjoyResources.bundle" />
+        <resource-file src="tgsdk/ios/resources/TGADSDK.bundle" />
+        <resource-file src="tgsdk/ios/resources/TGStartedIcon.png" />
+        <resource-file src="tgsdk/ios/resources/TGUnstartedIcon.png" />
+        <resource-file src="tgsdk/ios/resources/UnityAds.bundle" />
+        <resource-file src="tgsdk/ios/resources/vg_close.png" />
+        <resource-file src="tgsdk/ios/resources/vg_cta.png" />
+        <resource-file src="tgsdk/ios/resources/vg_mute_off.png" />
+        <resource-file src="tgsdk/ios/resources/vg_mute_on" />
+        <resource-file src="tgsdk/ios/resources/vg_privacy" />
+        
+        <framework src="libc++.tbd" />
+        <framework src="libsqlite3.tbd" />
+        <framework src="libxml2.tbd" />
+        <framework src="libz.tbd" />
+        <framework src="Accelerate.framework" />
+        <framework src="AdSupport.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="AVFoundation.framework" />
+        <framework src="CFNetwork.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="CoreLocation.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="CoreMedia.framework" />
+        <framework src="CoreMotion.framework" />
+        <framework src="EventKit.framework" />
+        <framework src="GLKit.framework" />
+        <framework src="iAd.framework" />
+        <framework src="MediaPlayer.framework" />
+        <framework src="MessageUI.framework" />
+        <framework src="MobileCoreServices.framework" />
+        <framework src="QuartzCore.framework" />
+        <framework src="Security.framework" />
+        <framework src="Social.framework" />
+        <framework src="StoreKit.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="WebKit.framework" />
+        <framework src="JavaScriptCore.framework" />
     </platform>
  </plugin>
