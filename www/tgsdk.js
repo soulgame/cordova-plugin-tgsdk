@@ -1,6 +1,6 @@
 module.exports = {
     setDebugModel: function(debug) {
-        cordova.exec(null, null, 'TGSDK', 'setDebugModel', [debug]);
+        cordova.exec(null, null, 'TGSDKCordova', 'setDebugModel', [debug]);
     },
     initialize: function(appid, channelid) {
         console.log("[cordova] TGSDK.initialize");
@@ -18,7 +18,7 @@ module.exports = {
                     self.onInitFailure(err);
                 }
             },
-            'TGSDK', 'initialize',
+            'TGSDKCordova', 'initialize',
             [appid, channelid]
         );
     },
@@ -26,14 +26,14 @@ module.exports = {
         console.log("[cordova] TGSDK.setSDKConfig("+k+", "+v+")");
         var self = this;
         cordova.exec(
-            null, null, 'TGSDK', 'setSDKConfig', [k, v]
+            null, null, 'TGSDKCordova', 'setSDKConfig', [k, v]
         );
     },
     getSDKConfig: function(k, cb) {
         console.log("[cordova] TGSDK.getSDKConfig("+k+")");
         var self = this;
         cordova.exec(
-            cb, null, 'TGSDK', 'getSDKConfig', [k]
+            cb, null, 'TGSDKCordova', 'getSDKConfig', [k]
         );
     },
     preload: function() {
@@ -46,14 +46,14 @@ module.exports = {
                     self[evt](ret);
                 }
             },
-            null, 'TGSDK', 'preload', []
+            null, 'TGSDKCordova', 'preload', []
         );
     },
     couldShowAd: function(scene, isReadyFunc, notReadyFunc) {
         console.log("[cordova] TGSDK.couldShowAd("+scene+")");
         var self = this;
         cordova.exec(
-            isReadyFunc, notReadyFunc, 'TGSDK', 'couldShowAd', [scene]
+            isReadyFunc, notReadyFunc, 'TGSDKCordova', 'couldShowAd', [scene]
         );
     },
     showAd: function(scene) {
@@ -66,7 +66,7 @@ module.exports = {
                     self[evt](ret);
                 }
             },
-            null, 'TGSDK', 'showAd', [scene]
+            null, 'TGSDKCordova', 'showAd', [scene]
         );
     }
 };
