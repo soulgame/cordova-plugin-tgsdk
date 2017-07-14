@@ -144,51 +144,39 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-
-        console.log("TGSDK cordova start...");
         window.tgsdk.setDebugModel(true);
         window.tgsdk.initialize("59t5rJH783hEQ3Jd7Zqr");
-        window.isAdShowing = false;
-        window.isAdReady = false;
         window.tgsdk.onVideoADLoaded = function(ret) {
-            console.log("[cordova] onVideoADLoaded "+ret);
             window.tgsdk.couldShowAd(
                 "hiRZYZxDI7c2LaOgrE7",
                 function(){
-                    window.isAdReady = true;
-                    setTimeout(function(){
-                        if (!window.isAdShowing) {
-                            window.isAdShowing = true;
-                            window.tgsdk.showAd("hiRZYZxDI7c2LaOgrE7");
-                        }
-                    }, 500);
+                    window.tgsdk.showAd("hiRZYZxDI7c2LaOgrE7");
                 },
                 function() {
-                    console.log("[cordova] hiRZYZxDI7c2LaOgrE7 not ready");
+                    console.log("[cordova] not ready");
                 }
             );
         };
-        window.tgsdk.onShowSuccess = function() {
-            window.isAdShowing = true;
+        window.tgsdk.onADAwardSuccess = function(ret) {
+            console.log("[cordova] ADAwardSuccess");
         };
-        window.tgsdk.onShowFailed = function() {
-            window.isAdShowing = false;
+        window.tgsdk.onADAwardFailed = function(ret) {
+            console.log("[cordova] ADAwardFailed");
+        };
+        window.tgsdk.onShowSuccess = function(ret) {
+            console.log("[cordova] ShowSuccess");
+        };
+        window.tgsdk.onShowFailed = function(ret) {
+            console.log("[cordova] ShowFailed");
+        };
+        window.tgsdk.onADComplete = function(ret) {
+            console.log("[cordova] ADComplete");
+        };
+        window.tgsdk.onADClick = function(ret) {
+            console.log("[cordova] ADClick");
         };
         window.tgsdk.onADClose = function(ret) {
-            window.isAdShowing = false;
-            setTimeout(function(){
-                if (!window.isAdShowing && window.isAdReady) {
-                    window.tgsdk.showAd("hiRZYZxDI7c2LaOgrE7");
-                }
-            }, 500);
+            console.log("[cordova] ADClose");
         };
         window.tgsdk.preload();
     }
