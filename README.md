@@ -22,7 +22,7 @@ cordova plugin add cordova-plugin-tgsdk
 ```
 # API #
 
-###Initialize TGSDK
+### Initialize TGSDK
 
 After registering account and creating your App on [Yomob Official Website](http://yomob.com/) you will acquire the corresponding product `AppID` from the website, and then use this parameter to initialize TGSDK.
 
@@ -30,7 +30,7 @@ After registering account and creating your App on [Yomob Official Website](http
 window.tgsdk.initialize("Your AppID from Yomob");
 ```
 
-###Enable Debug mode
+### Enable Debug mode
 
 After enabling Debug mode, you can view the output of much more logs. This is convenient for locating problems.
 
@@ -39,14 +39,14 @@ After enabling Debug mode, you can view the output of much more logs. This is co
 ```javascript
 window.tgsdk.setDebugModel(true);
 ```
-###Preload Ads Resources
+### Preload Ads Resources
 
 To have enough time to load ads resources, it is recommended to call the preload API to load ads as early as possible. You can even call the preload API to load ads as soon as you initialize TGSDK.
 
 ```javascript
 window.tgsdk.preload();
 ```
-###Set monitoring on ads preload event
+### Set monitoring on ads preload event
 
 You can monitor the ads loading process via `function`.
 
@@ -64,7 +64,7 @@ window.tgsdk.onVideoADLoaded = function(ret) {
     // Video ads are ready
 };
 ```
-###Play Ads
+### Play Ads
 
 First, please create ad scenes for the registered App via [Yomob Official Website](http://yomob.com/). After acquiring the corresponding ad scene ID, you can use it to verify whether the ads are ready. If the ads of the corresponding scene are ready, the video ads play API can be called to play the ads.
 
@@ -79,7 +79,7 @@ window.tgsdk.couldShowAd(
     }
 );
 ```
-###Set monitoring on ads playing behavior event
+### Set monitoring on ads playing behavior event
 
 Monitor events occurred during ads playing process via `function`.
 
@@ -106,7 +106,7 @@ window.tgsdk.onADClose = function(ret) {
     // Ads are closed
 };
 ```
-###Ads Test Tool
+### Ads Test Tool
 
 >**Please do not use this function in prodction enviornment. It is only for testing**
 
