@@ -41,11 +41,13 @@ module.exports = {
         var self = this;
         cordova.exec(
             function(msg) {
-                var evt = msg[0];
-                var ret = msg[1];
-                console.log("[cordova] TGSDK "+evt+"("+ret+")");
-                if (self[evt]) {
-                    self[evt](ret);
+                if (!!msg) {
+                    var evt = msg[0];
+                    var ret = msg[1];
+                    console.log("[cordova] TGSDK "+evt+"("+ret+")");
+                    if (self[evt]) {
+                        self[evt](ret);
+                    }
                 }
             },
             null, 'TGSDKCordova', 'preload', []
@@ -63,11 +65,13 @@ module.exports = {
         var self = this;
         cordova.exec(
             function(msg) {
-                var evt = msg[0];
-                var ret = msg[1];
-                console.log("[cordova] TGSDK "+evt+"("+ret+")");
-                if (self[evt]) {
-                    self[evt](ret);
+                if (!!msg) {
+                    var evt = msg[0];
+                    var ret = msg[1];
+                    console.log("[cordova] TGSDK "+evt+"("+ret+")");
+                    if (self[evt]) {
+                        self[evt](ret);
+                    }
                 }
             },
             null, 'TGSDKCordova', 'showAd', [scene]
@@ -77,7 +81,17 @@ module.exports = {
         console.log("[cordova] TGSDK.showTestView("+scene+")");
         var self = this;
         cordova.exec(
-            null, null, 'TGSDKCordova', 'showTestView', [scene]
+            function(msg) {
+                if (!!msg) {
+                    var evt = msg[0];
+                    var ret = msg[1];
+                    console.log("[cordova] TGSDK "+evt+"("+ret+")");
+                    if (self[evt]) {
+                        self[evt](ret);
+                    }
+                }
+            },
+            null, 'TGSDKCordova', 'showTestView', [scene]
         );
     }
 };

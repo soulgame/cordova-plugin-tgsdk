@@ -16,39 +16,61 @@
 - (void) setDebugModel: (CDVInvokedUrlCommand*)command {
     BOOL isDebugModel = [command.arguments objectAtIndex: 0];
     [TGSDK setDebugModel:isDebugModel];
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void) initialize: (CDVInvokedUrlCommand*)command {
     NSString *appid = [command.arguments objectAtIndex: 0];
     NSString *channelid = nil;
-    if (command.arguments.count > 1) {
+    if (command.arguments.count > 2) {
         channelid = [command.arguments objectAtIndex: 1];
     }
-    [TGSDK initialize:appid channelID:channelid callback:^(BOOL success, id  _Nullable tag, NSDictionary * _Nullable result) {
-        CDVPluginResult* pluginResult = nil;
-        if (success) {
-            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-        } else {
-            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-        }
-        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-    }];
+    NSLog(@"TGSDK.initialize %@, %@", appid, (channelid?channelid:@"nil"));
+    if (nil == channelid || [channelid isEqual:[NSNull null]]) {
+        [TGSDK initialize:appid callback:^(BOOL success, id  _Nullable tag, NSDictionary * _Nullable result) {
+            CDVPluginResult* pluginResult = nil;
+            if (success) {
+                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+            } else {
+                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+            }
+            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+        }];
+    } else {
+        [TGSDK initialize:appid channelID:channelid callback:^(BOOL success, id  _Nullable tag, NSDictionary * _Nullable result) {
+            CDVPluginResult* pluginResult = nil;
+            if (success) {
+                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+            } else {
+                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+            }
+            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+        }];
+    }
 }
 
 - (void) setSDKConfig: (CDVInvokedUrlCommand*)command {
     NSString *k = [command.arguments objectAtIndex: 0];
     NSString *v = [command.arguments objectAtIndex: 1];
     [TGSDK setSDKConfig:v forKey:k];
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void) getSDKConfig: (CDVInvokedUrlCommand*)command {
     NSString *k = [command.arguments objectAtIndex: 0];
-    [TGSDK getSDKConfig:k];
+    NSString* ret = [TGSDK getSDKConfig:k];
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:ret];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void) preload: (CDVInvokedUrlCommand*)command {
     preloadCallback = command.callbackId;
     [TGSDK preloadAd:self];
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [pluginResult setKeepCallbackAsBool:YES];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void) couldShowAd: (CDVInvokedUrlCommand*)command {
@@ -68,13 +90,20 @@
     [TGSDK setRewardVideoADDelegate:self];
     NSString *scene = [command.arguments objectAtIndex: 0];
     [TGSDK showAd:scene];
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [pluginResult setKeepCallbackAsBool:YES];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void) showTestView: (CDVInvokedUrlCommand*)command {
+    adCallback = command.callbackId;
     [TGSDK setADDelegate:self];
     [TGSDK setRewardVideoADDelegate:self];
     NSString *scene = [command.arguments objectAtIndex: 0];
     [TGSDK showTestView:scene];
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [pluginResult setKeepCallbackAsBool:YES];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void) onPreloadSuccess:(NSString* _Nullable)result {
