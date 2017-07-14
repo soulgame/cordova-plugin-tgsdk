@@ -274,7 +274,7 @@
         <framework src="tgsdk/ios/frameworks/Centrixlink.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/ChanceAdSDK.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/Chartboost.framework" custom="true" />
-        <framework src="tgsdk/ios/frameworks/DomobVideoSDK.framework	" custom="true" />
+        <framework src="tgsdk/ios/frameworks/DomobVideoSDK.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/FBAudienceNetwork.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/FMDB.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/GoogleMobileAds.framework" custom="true" />
@@ -299,8 +299,8 @@
         <resource-file src="tgsdk/ios/resources/vg_close.png" />
         <resource-file src="tgsdk/ios/resources/vg_cta.png" />
         <resource-file src="tgsdk/ios/resources/vg_mute_off.png" />
-        <resource-file src="tgsdk/ios/resources/vg_mute_on" />
-        <resource-file src="tgsdk/ios/resources/vg_privacy" />
+        <resource-file src="tgsdk/ios/resources/vg_mute_on.png" />
+        <resource-file src="tgsdk/ios/resources/vg_privacy.png" />
         
         <framework src="libc++.tbd" />
         <framework src="libsqlite3.tbd" />
