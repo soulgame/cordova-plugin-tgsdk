@@ -68,7 +68,7 @@ public class TGSDKCordova extends CordovaPlugin implements ITGPreloadListener, I
         } else if (action.equals("preload")) {
             preloadCallbackContext = callbackContext;
             TGSDK.preloadAd(this.cordova.getActivity(), this);
-            PluginResult pr = new PluginResult(PluginResult.Status.OK);
+            PluginResult pr = new PluginResult(PluginResult.Status.OK, false);
             pr.setKeepCallback(true);
 		    preloadCallbackContext.sendPluginResult(pr);
         } else if (action.equals("couldShowAd")) {
@@ -84,7 +84,7 @@ public class TGSDKCordova extends CordovaPlugin implements ITGPreloadListener, I
             TGSDK.setRewardVideoADListener(this);
             String scene = args.getString(0);
             TGSDK.showAd(this.cordova.getActivity(), scene);
-            PluginResult pr = new PluginResult(PluginResult.Status.OK);
+            PluginResult pr = new PluginResult(PluginResult.Status.OK, false);
             pr.setKeepCallback(true);
 		    preloadCallbackContext.sendPluginResult(pr);
         } else if (action.equals("showTestView")) {
@@ -93,7 +93,7 @@ public class TGSDKCordova extends CordovaPlugin implements ITGPreloadListener, I
             TGSDK.setRewardVideoADListener(this);
             String scene = args.getString(0);
             TGSDK.showTestView(this.cordova.getActivity(), scene);
-            PluginResult pr = new PluginResult(PluginResult.Status.OK);
+            PluginResult pr = new PluginResult(PluginResult.Status.OK, false);
             pr.setKeepCallback(true);
 		    preloadCallbackContext.sendPluginResult(pr);
         } else {
