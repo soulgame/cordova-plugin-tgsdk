@@ -12,7 +12,7 @@
         <clobbers target="window.tgsdk" />
     </js-module>
     <platform name="android">
-        <dependency id="android.support.v4@25.3.1" />
+
     	<!-- for CN -->
         <framework src="src/android/cordova-plugin-tgsdk.cn.gradle" custom="true" type="gradleReference" />
         <!-- for GooglePlay
