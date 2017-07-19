@@ -26,6 +26,15 @@ typedef enum {
     TGAdType3rdNative
 }TGAdType;
 
+typedef enum {
+    TGADIsOK,
+    TGSDKNotInitialize,
+    TGADNotPreload,
+    TGADConfigNotFound,
+    TGADIsABTest,
+    TGADNotReady
+} TGAdStatus;
+
 
 @protocol TGPreloadADDelegate <NSObject>
 @optional
@@ -141,6 +150,7 @@ typedef enum {
 
 +(BOOL)couldShowAd:(NSString* _Nonnull)scene;
 +(BOOL)couldShow:(NSString* _Nonnull)scene Ad:(NSString* _Nullable) sdk;
++(TGAdStatus) getAdStatus:(NSString* _Nonnull)scene;
 
 /*当开始给用户显示广告的时候调用，返回值如果是NSString，则是预加载没有完成或者没有调用预加载，如果返回值是NSData，则是图片的数据。同时发送counter cp_adview*/
 +(void)setADDelegate:(id<TGADDelegate> _Nullable)delegate;
