@@ -274,7 +274,6 @@
         <framework src="tgsdk/ios/frameworks/Centrixlink.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/ChanceAdSDK.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/Chartboost.framework" custom="true" />
-        <framework src="tgsdk/ios/frameworks/DomobVideoSDK.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/FBAudienceNetwork.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/FMDB.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/GoogleMobileAds.framework" custom="true" />
@@ -290,7 +289,6 @@
         
         <resource-file src="tgsdk/ios/resources/__vungle.db" />
         <resource-file src="tgsdk/ios/resources/ChanceAdRes.bundle" />
-        <resource-file src="tgsdk/ios/resources/IndependentVideoBundle.bundle" />
         <resource-file src="tgsdk/ios/resources/TapjoyResources.bundle" />
         <resource-file src="tgsdk/ios/resources/TGADSDK.bundle" />
         <resource-file src="tgsdk/ios/resources/TGStartedIcon.png" />
