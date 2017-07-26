@@ -13,7 +13,6 @@ dependencies {
     compile(name: 'TGSDKADAppnext.1.6.7', ext: 'aar')
     compile(name: 'TGSDKADCentrixlink.1.6.7', ext: 'aar')
     compile(name: 'TGSDKADChartboost.1.6.7', ext: 'aar')
-    compile(name: 'TGSDKADDomob.1.6.7', ext: 'aar')
     compile(name: 'TGSDKADFacebook.1.6.7', ext: 'aar')
     compile(name: 'TGSDKADInmobi.1.6.7', ext: 'aar')
     compile(name: 'TGSDKADLeadbolt.1.6.7', ext: 'aar')
