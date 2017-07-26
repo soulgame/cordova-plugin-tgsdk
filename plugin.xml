@@ -53,7 +53,7 @@
             </feature>
         </config-file>
         
-        <edit-config file="AndroidManifest.xml" target="/manifest" mode="merge">
+        <edit-config file="AndroidManifest.xml" target="/manifest" mode="overwrite">
     		<manifest xmlns:tools="http://schemas.android.com/tools" />
 		</edit-config>
         
