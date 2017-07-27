@@ -44,8 +44,10 @@
         <resource-file src="tgsdk/android/okio-1.11.0.jar" target="libs/okio-1.11.0.jar" />
         <resource-file src="tgsdk/android/picasso-2.5.2.jar" target="libs/picasso-2.5.2.jar" />
         <resource-file src="tgsdk/android/rxjava-1.2.0.jar" target="libs/rxjava-1.2.0.jar" />
+        <!--
         <resource-file src="tgsdk/android/support-v4-24.1.0.jar" target="libs/support-v4-24.1.0.jar" />
         <resource-file src="tgsdk/android/internal_impl-24.1.0.jar" target="libs/internal_impl-24.1.0.jar" />
+        -->
         
         <config-file target="config.xml" parent="/*">
             <feature name="TGSDKCordova">

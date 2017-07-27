@@ -6,6 +6,7 @@ repositories{
 }
 
 dependencies {
+    compile 'com.android.support:support-v4'
     compile(name:'TGSDK.1.6.7', ext:'aar')
     compile(name: 'TGSDKADCentrixlink.1.6.7', ext: 'aar')
     compile(name: 'TGSDKADDianjoy.1.6.7', ext: 'aar')
