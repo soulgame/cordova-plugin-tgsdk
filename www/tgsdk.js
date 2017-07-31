@@ -19,7 +19,7 @@ module.exports = {
             function(err) {
                 console.log("[cordova] onInitFailure("+err+")");
                 if (!!window.CustomEvent && !!window.document) {
-                    var evt = new CustomEvent('onInitFailure', {'error' : err});
+                    var evt = new CustomEvent('onInitFailure', {detail: {'error' : err}});
                     window.document.dispatchEvent(evt);
                 }
                 if (self.onInitFailure) {
@@ -63,7 +63,7 @@ module.exports = {
                     var ret = msg[1];
                     console.log("[cordova] TGSDK "+evt+"("+ret+")");
                     if (!!window.CustomEvent && !!window.document) {
-                        var cevt = new CustomEvent(evt, {'result' : ret});
+                        var cevt = new CustomEvent(evt, {detail: {'result' : ret}});
                         window.document.dispatchEvent(cevt);
                     }
                     if (self[evt]) {
@@ -91,7 +91,7 @@ module.exports = {
                     var ret = msg[1];
                     console.log("[cordova] TGSDK "+evt+"("+ret+")");
                     if (!!window.CustomEvent && !!window.document) {
-                        var cevt = new CustomEvent(evt, {'result' : ret});
+                        var cevt = new CustomEvent(evt, {detail: {'result' : ret}});
                         window.document.dispatchEvent(cevt);
                     }
                     if (self[evt]) {
@@ -112,7 +112,7 @@ module.exports = {
                     var ret = msg[1];
                     console.log("[cordova] TGSDK "+evt+"("+ret+")");
                     if (!!window.CustomEvent && !!window.document) {
-                        var cevt = new CustomEvent(evt, {'result' : ret});
+                        var cevt = new CustomEvent(evt, {detail: {'result' : ret}});
                         window.document.dispatchEvent(cevt);
                     }
                     if (self[evt]) {

@@ -39,7 +39,7 @@ public class TGSDKCordova extends CordovaPlugin implements ITGPreloadListener, I
         } else if (action.equals("getSceneParameter")) {
             String s = args.getString(0);
             String k = args.getString(1);
-            Object r = TGSDK.parameterFromScene(s, k);
+            Object r = TGSDK.parameterFromAdScene(s, k);
             if (null == r) {
                 callbackContext.error("");
             } else {
