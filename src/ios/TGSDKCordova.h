@@ -19,6 +19,7 @@
 - (void) initialize: (CDVInvokedUrlCommand*)command;
 - (void) setSDKConfig: (CDVInvokedUrlCommand*)command;
 - (void) getSDKConfig: (CDVInvokedUrlCommand*)command;
+- (void) getSceneParameter: (CDVInvokedUrlCommand*)command;
 - (void) preload: (CDVInvokedUrlCommand*)command;
 - (void) couldShowAd: (CDVInvokedUrlCommand*)command;
 - (void) showAd: (CDVInvokedUrlCommand*)command;
