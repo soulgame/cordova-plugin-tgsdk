@@ -6,10 +6,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MVRewardAdInfo.h"
+#import <MVSDK/MVRewardAdInfo.h>
 
 #define kMVErrorCodeNoAdsAvailableToPlay          12930004
 #define kMVErrorCodeFailedToPlay                  12930005
+#define kMVErrorCodeFailedToLoad                  12930006
+#define kMVErrorCodeDailyLimit                    12930007
 
 #pragma mark - MVRewardAdManagerDelegate
 

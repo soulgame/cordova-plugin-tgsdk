@@ -10,6 +10,7 @@
 #define kMVErrorCodeURLisEmpty     12930003
 #import "MVCampaign.h"
 
+@class MVNativeAdManager;
 typedef NS_ENUM(NSInteger, MVAdCategory) {
     MVAD_CATEGORY_ALL  = 0,
     MVAD_CATEGORY_GAME = 1,
@@ -35,6 +36,8 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
  
  */
 - (void)nativeAdsLoaded:(nullable NSArray *)nativeAds;
+- (void)nativeAdsLoaded:(nullable NSArray *)nativeAds nativeManager:(nonnull MVNativeAdManager *)nativeManager;
+
 
 /*!
  @method
@@ -43,7 +46,8 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
  @param error An NSError object with information about the failure.
  
  */
-- (void)nativeAdsFailedToLoadWithError:(nonnull NSError *)error;
+- (void)nativeAdsFailedToLoadWithError:(nonnull NSError *)error ;
+- (void)nativeAdsFailedToLoadWithError:(nonnull NSError *)error nativeManager:(nonnull MVNativeAdManager *)nativeManager;
 
 /*!
  @method
@@ -74,6 +78,8 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
  @param nativeAd An MVCampaign object sending the message.
  */
 - (void)nativeAdDidClick:(nonnull MVCampaign *)nativeAd;
+- (void)nativeAdDidClick:(nonnull MVCampaign *)nativeAd nativeManager:(nonnull MVNativeAdManager *)nativeManager;
+
 
 /*!
  @method
@@ -84,7 +90,7 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
  @param clickUrl The click url of the ad.
  */
 - (void)nativeAdClickUrlWillStartToJump:(nonnull NSURL *)clickUrl;
-
+- (void)nativeAdClickUrlWillStartToJump:(nonnull NSURL *)clickUrl nativeManager:(nonnull MVNativeAdManager *)nativeManager;
 /*!
  @method
  
@@ -96,6 +102,8 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
  @discussion It will not be called if a ad's final jump url has been cached
  */
 - (void)nativeAdClickUrlDidJumpToUrl:(nonnull NSURL *)jumpUrl;
+- (void)nativeAdClickUrlDidJumpToUrl:(nonnull NSURL *)jumpUrl nativeManager:(nonnull MVNativeAdManager *)nativeManager;
+
 
 /*!
  @method
@@ -109,7 +117,8 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
 - (void)nativeAdClickUrlDidEndJump:(nullable NSURL *)finalUrl
                              error:(nullable NSError *)error;
 
-
+- (void)nativeAdClickUrlDidEndJump:(nullable NSURL *)finalUrl
+                             error:(nullable NSError *)error nativeManager:(nonnull MVNativeAdManager *)nativeManager;
 
 @end
 
@@ -136,6 +145,28 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
 @property (nonatomic, assign) BOOL showLoadingView;
 
 /*!
+ @property
+ 
+ @discussion Whether to support video ads.
+ */
+@property (nonatomic, readonly) BOOL videoSupport;
+
+/*!
+ @property
+ 
+ @discussion ad current UnitId .
+ */
+@property (nonatomic, readonly) NSString * _Nonnull currentUnitId;
+/*!
+ @property
+ 
+ @discussion The current ViewController of display ad. 
+ the "ViewController" parameters are assigned as calling the init or Registerview method
+ */
+@property (nonatomic, weak) UIViewController * _Nullable  viewController;
+
+
+/*!
  @method
 
  @abstract Initialize the native ads manager which is for loading ads. (MVCampaign)
@@ -148,6 +179,24 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
  */
 - (nonnull instancetype)initWithUnitID:(nonnull NSString *)unitId
                          fbPlacementId:(nullable NSString *)fbPlacementId
+                    forNumAdsRequested:(NSUInteger)numAdsRequested
+              presentingViewController:(nullable UIViewController *)viewController;
+
+/*!
+ @method
+ 
+ @abstract Initialize the native ads manager which is for loading ads. (MVCampaign)
+ 
+ @param unitId The id of the ad unit. You can create your unit id from our Portal.
+ @param fbPlacementId The Facebook PlacementID is used to request ads from Facebook. You can also set the placementID in our portal. The ID you set in our web portal will replace the ID you set here in future.
+ @param videoSupport If the support video ads, set videoSupport  to yes.
+ @param numAdsRequested The number of ads you would like the native ad manager to retrieve. Max number is 10. If you pass any number bigger than 10, it will be reset to 10.
+ @param viewController The UIViewController that will be used to present SKStoreProductViewController
+ (iTunes Store product information) or the in-app browser. If not set, it will be the root viewController of your current UIWindow. But it may failed to present our view controller if your rootViewController is presenting other view controller. So set this property is necessary.
+ */
+- (nonnull instancetype)initWithUnitID:(nonnull NSString *)unitId
+                         fbPlacementId:(nullable NSString *)fbPlacementId
+                          videoSupport:(BOOL)videoSupport
                     forNumAdsRequested:(NSUInteger)numAdsRequested
               presentingViewController:(nullable UIViewController *)viewController;
 
@@ -269,6 +318,41 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
  
  */
 - (void)unregisterView:(nonnull UIView *)view clickableViews:(nonnull NSArray *)clickableViews;
+
+/*!
+ @method
+ 
+ @abstract
+
+ This is a method to clean the cache nativeAd .
+ 
+ @param
+ 
+ */
+- (void)cleanAdsCache;
+
+/*!
+ @method
+ 
+ @abstract
+
+ Set the video display area size.
+ 
+ @param size The display area size.
+ 
+ */
+-(void)setVideoViewSize:(CGSize)size;
+
+/*!
+ @method
+ 
+ @abstract
+ Set the video display area size.
+ 
+ @param width The display area width.
+ @param width The display area height.
+ */
+-(void)setVideoViewSizeWithWidth:(CGFloat)width height:(CGFloat)height;
 
 
 @end

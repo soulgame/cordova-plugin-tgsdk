@@ -169,6 +169,9 @@ typedef enum {
 
 +(nullable id) parameterFromAdScene:(nonnull NSString*)scene WithKey:(nonnull NSString*)key;
 
+/*自定义用户数据，主要用于S2S，将自定义用户数据发送给客户服务器用于标示用户*/
++(void)setCustomUserData:(NSString* _Nullable)userData;
+
 /**************************   数据追踪  ******************************/
 + (void)sendCounter:(NSString* _Nonnull)name metaData:(NSDictionary* _Nullable)md;
 + (void)sendCounter:(NSString* _Nonnull)name metaDataJson:(NSString* _Nullable)mdJson;

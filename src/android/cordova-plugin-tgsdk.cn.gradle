@@ -6,13 +6,15 @@ repositories{
 }
 
 dependencies {
-    compile 'com.android.support:support-v4'
-    compile(name:'TGSDK.1.6.7', ext:'aar')
-    compile(name: 'TGSDKADCentrixlink.1.6.7', ext: 'aar')
-    compile(name: 'TGSDKADDianjoy.1.6.7', ext: 'aar')
-    compile(name: 'TGSDKADYumi.1.6.7', ext: 'aar')
-    compile(name: 'TGSDKADOneway.1.6.7', ext: 'aar')
-    compile(name: 'TGSDKADVungle.1.6.7', ext: 'aar')
+    compile 'com.android.support:support-v4:25.3.1'
+    compile(name:'TGSDK.1.6.8', ext:'aar')
+    compile(name: 'TGSDKADCentrixlink.cn.1.6.8', ext: 'aar')
+    compile(name: 'TGSDKADDianjoy.1.6.8', ext: 'aar')
+    compile(name: 'TGSDKADYumi.1.6.8', ext: 'aar')
+    compile(name: 'TGSDKADOneway.1.6.8', ext: 'aar')
+    compile(name: 'TGSDKADVungle.1.6.8', ext: 'aar')
+    compile(name: 'TGSDKADLanmei.1.6.8', ext: 'aar')
+    compile(name: 'TGSDKADMobvista.1.6.8', ext: 'aar')
 }
 
 android {
