@@ -5,7 +5,7 @@ Show TGSDK rewarded video ad
 
 Requires YoMob account [https://www.yomob.com/](https://www.yomob.com/)
 
-TGSDK 1.6.8
+TGSDK 1.6.9
 
 This is open source cordova plugin.
 
@@ -14,6 +14,8 @@ This is open source cordova plugin.
 2017.7.14 Version 1.6.7
 
 2017.9.15 Version 1.6.8
+
+2017.10.27 Version 1.6.9
 ```
 # Install plugin #
 

@@ -63,10 +63,6 @@
  */
 @property (nonatomic, strong) NSDictionary* extras;
 /**
- * A Boolean which indicates whether the SDK should open the Landing page on user interaction on primary view
- */
-@property (nonatomic, assign, class) BOOL shouldOpenLandingPage;
-/**
  * Initialize a Native ad with the given PlacementId
  * @param placementId The placementId for loading the native ad
  */
@@ -85,10 +81,6 @@
  * Indicates if the native ad is ready to be displayed.
  */
 -(BOOL)isReady;
-/**
- * Reports the click action to the native ad.
- */
--(void)reportAdClick;
 /**
  * Reports the click action to the native ad and open the landing page.
  */

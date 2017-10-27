@@ -32,7 +32,8 @@ typedef enum {
     TGADNotPreload,
     TGADConfigNotFound,
     TGADIsABTest,
-    TGADNotReady
+    TGADNotReady,
+    TGADDevicePowerIsLow
 } TGAdStatus;
 
 
