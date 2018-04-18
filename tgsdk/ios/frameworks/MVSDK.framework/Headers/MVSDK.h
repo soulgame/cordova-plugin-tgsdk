@@ -5,7 +5,7 @@
 //  Created by Jomy on 15/9/28.
 //
 
-#define MVSDKVersion @"2.7.0"
+#define MVSDKVersion @"3.3.5"
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -15,6 +15,7 @@
 #import <MVSDK/MVFrame.h>
 #import <MVSDK/MVNativeScrollView.h>
 #import <MVSDK/MVMediaView.h>
+#import <MVSDK/MVUserInfo.h>
 
 @interface MVSDK : NSObject
 
@@ -116,8 +117,9 @@
 - (void)preloadAppWallAdsWithUnitId:(nonnull NSString *)unitId;
 
 
+@property (nonatomic, assign) BOOL autoSetAudioCategory;
 
-
+- (void)setUserInfo:(nonnull MVUserInfo *)userInfo;
 
 
 

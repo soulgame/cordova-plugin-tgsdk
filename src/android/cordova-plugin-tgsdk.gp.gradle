@@ -7,21 +7,18 @@ repositories{
 
 dependencies {
     compile 'com.android.support:support-v4:25.3.1'
-    compile(name:'TGSDK.1.6.9', ext:'aar')
-    compile(name: 'TGSDKADAdcolony.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADAdmob.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADApplovin.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADAppnext.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADCentrixlink.googleplay.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADChartboost.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADFacebook.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADInmobi.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADLeadbolt.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADMobvista.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADOneway.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADTapjoy.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADUnityads.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADVungle.1.6.9', ext: 'aar')
+    compile(name:'TGSDK.1.7.2', ext:'aar')
+    compile(name: 'TGSDKADAdcolony.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADAdmob.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADApplovin.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADChartboost.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADFacebook.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADIronsource.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADMobvista.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADTapjoy.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADUnityads.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADVungle.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADYouappi.1.7.2', ext: 'aar')
 }
 
 android {

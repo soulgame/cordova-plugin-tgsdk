@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ALAnnotations.h"
+#import "ALPostbackDelegate.h"
+
+AL_ASSUME_NONNULL_BEGIN
 
 @interface ALNativeAd : NSObject
 
@@ -16,66 +18,71 @@
  *
  *  Should you need to report a broken ad to AppLovin support, please include this number's longValue.
  */
-@property (strong, nonatomic, readonly) NSNumber * __alnonnull adIdNumber;
+@property (strong, nonatomic, readonly) NSNumber *adIdNumber;
+
+/**
+ *  The zone identifier for the ad, if any.
+ */
+@property (copy, nonatomic, readonly, alnullable) NSString *zoneIdentifier;
 
 /**
  *  The title of the native ad.
  */
-@property (copy, nonatomic, readonly) NSString * __alnullable title;
+@property (copy, nonatomic, readonly, alnullable) NSString *title;
 
 /**
  *  The description of the native ad.
  */
-@property (copy, nonatomic, readonly) NSString * __alnullable descriptionText;
+@property (copy, nonatomic, readonly, alnullable) NSString *descriptionText;
 
 /**
  *  The caption text of the native ad.
  */
-@property (copy, nonatomic, readonly) NSString * __alnullable captionText;
+@property (copy, nonatomic, readonly, alnullable) NSString *captionText;
 
 /**
  *  The CTA text of the native ad.
  */
-@property (copy, nonatomic, readonly) NSString * __alnullable ctaText;
+@property (copy, nonatomic, readonly, alnullable) NSString *ctaText;
 
 /**
  *  The app icon URL of the native ad.
  */
-@property (strong, nonatomic, readonly) NSURL * __alnullable iconURL;
+@property (strong, nonatomic, readonly, alnullable) NSURL *iconURL;
 
 /**
  *  The ad image URL for a non-video native ad.
  */
-@property (strong, nonatomic, readonly) NSURL * __alnullable imageURL;
+@property (strong, nonatomic, readonly, alnullable) NSURL *imageURL;
 
 /**
  *  The star rating of the native ad. Please use floatValue when extracting value from the NSNumber
  */
-@property (strong, nonatomic, readonly) NSNumber * __alnullable starRating;
+@property (strong, nonatomic, readonly, alnullable) NSNumber *starRating;
 
 /**
  *  The video URL for a video native ad.
  *
  *  Note that if this native ad does not contain a video, this property will be nil.
  */
-@property (strong, nonatomic, readonly) NSURL * __alnullable videoURL;
+@property (strong, nonatomic, readonly, alnullable) NSURL *videoURL;
 
 /**
- *  The impression tracking URL of the native ad.
+ *  Fires the impression asynchronously.
  */
-@property (strong, nonatomic, readonly) NSURL * __alnonnull impressionTrackingURL;
+- (void)trackImpression;
 
 /**
- *  The click URL the native ad redirects to.
+ *  Fires the impression asynchronously and notifies the provided delegate.
  */
-@property (strong, nonatomic, readonly) NSURL * __alnonnull clickURL __deprecated_msg("Invoke method -launchClickTarget rather than opening this URL yourself.");
+- (void)trackImpressionAndNotify:(alnullable id<ALPostbackDelegate>)postbackDelegate;
 
 /**
  *  The video begin tracking URL of the native ad.
  *
  *  Note that if this native ad does not contain a video, this property will be nil.
  */
-@property (strong, nonatomic, readonly) NSURL * __alnullable videoStartTrackingURL;
+@property (strong, nonatomic, readonly, alnullable) NSURL *videoStartTrackingURL;
 
 /**
  * Retrieve the URL which should be fired upon video completion.
@@ -83,7 +90,7 @@
  * @param percentViewed The percentage of the video (0 - 100) that was viewed by the user.
  * @param firstPlay Whether or not this postback represents initial playback of the video. The first time you begin playback, you should pass true. If the video is paused for any reason and then later resumed mid-playback, you should fire this postback a second time, passing false to firstPlay.
  */
-- (alnullable NSURL *) videoEndTrackingURL: (NSUInteger) percentViewed firstPlay: (BOOL) firstPlay;
+- (alnullable NSURL *)videoEndTrackingURL:(NSUInteger)percentViewed firstPlay:(BOOL)firstPlay;
 
 /**
  *  Represents the precaching states of the slot's images.
@@ -103,6 +110,13 @@
  * You should call this method anytime the user taps anywhere on your native ad.
  * Calling this method launches Safari or the App Store and will result in your app being paused.
  */
-- (void) launchClickTarget;
+- (void)launchClickTarget;
 
 @end
+
+@interface ALNativeAd(ALDeprecated)
+@property (strong, nonatomic, readonly, alnullable) NSURL *clickURL __deprecated_msg("Invoke method -launchClickTarget rather than opening this URL yourself.");
+@property (strong, nonatomic, readonly) NSURL *impressionTrackingURL __deprecated_msg("Invoke method -trackImpression or -trackImpressionAndNotify: rather than firing this URL yourself.");
+@end
+
+AL_ASSUME_NONNULL_END

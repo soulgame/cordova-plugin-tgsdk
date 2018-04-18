@@ -35,7 +35,7 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
  @param nativeAds A array contains native ads (MVCampaign).
  
  */
-- (void)nativeAdsLoaded:(nullable NSArray *)nativeAds;
+- (void)nativeAdsLoaded:(nullable NSArray *)nativeAds DEPRECATED_ATTRIBUTE;
 - (void)nativeAdsLoaded:(nullable NSArray *)nativeAds nativeManager:(nonnull MVNativeAdManager *)nativeManager;
 
 
@@ -46,7 +46,7 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
  @param error An NSError object with information about the failure.
  
  */
-- (void)nativeAdsFailedToLoadWithError:(nonnull NSError *)error ;
+- (void)nativeAdsFailedToLoadWithError:(nonnull NSError *)error DEPRECATED_ATTRIBUTE;
 - (void)nativeAdsFailedToLoadWithError:(nonnull NSError *)error nativeManager:(nonnull MVNativeAdManager *)nativeManager;
 
 /*!
@@ -77,7 +77,7 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
  
  @param nativeAd An MVCampaign object sending the message.
  */
-- (void)nativeAdDidClick:(nonnull MVCampaign *)nativeAd;
+- (void)nativeAdDidClick:(nonnull MVCampaign *)nativeAd DEPRECATED_ATTRIBUTE;
 - (void)nativeAdDidClick:(nonnull MVCampaign *)nativeAd nativeManager:(nonnull MVNativeAdManager *)nativeManager;
 
 
@@ -89,7 +89,7 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
  
  @param clickUrl The click url of the ad.
  */
-- (void)nativeAdClickUrlWillStartToJump:(nonnull NSURL *)clickUrl;
+- (void)nativeAdClickUrlWillStartToJump:(nonnull NSURL *)clickUrl DEPRECATED_ATTRIBUTE;
 - (void)nativeAdClickUrlWillStartToJump:(nonnull NSURL *)clickUrl nativeManager:(nonnull MVNativeAdManager *)nativeManager;
 /*!
  @method
@@ -101,7 +101,7 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
  
  @discussion It will not be called if a ad's final jump url has been cached
  */
-- (void)nativeAdClickUrlDidJumpToUrl:(nonnull NSURL *)jumpUrl;
+- (void)nativeAdClickUrlDidJumpToUrl:(nonnull NSURL *)jumpUrl DEPRECATED_ATTRIBUTE;
 - (void)nativeAdClickUrlDidJumpToUrl:(nonnull NSURL *)jumpUrl nativeManager:(nonnull MVNativeAdManager *)nativeManager;
 
 
@@ -115,10 +115,13 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
  @param error the error generated between jumping.
  */
 - (void)nativeAdClickUrlDidEndJump:(nullable NSURL *)finalUrl
-                             error:(nullable NSError *)error;
+                             error:(nullable NSError *)error DEPRECATED_ATTRIBUTE;
 
 - (void)nativeAdClickUrlDidEndJump:(nullable NSURL *)finalUrl
                              error:(nullable NSError *)error nativeManager:(nonnull MVNativeAdManager *)nativeManager;
+
+
+- (void)nativeAdImpressionWithType:(MVAdSourceType)type nativeManager:(nonnull MVNativeAdManager *)nativeManager;
 
 @end
 
@@ -147,9 +150,10 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
 /*!
  @property
  
- @discussion Whether to support video ads.
+ @discussion DEPRECATED_ATTRIBUTE
+ Mintegral support configuration： https://www.mintegral.net
  */
-@property (nonatomic, readonly) BOOL videoSupport;
+@property (nonatomic, readonly) BOOL videoSupport DEPRECATED_ATTRIBUTE;
 
 /*!
  @property
@@ -189,7 +193,7 @@ typedef NS_ENUM(NSInteger, MVAdCategory) {
  
  @param unitId The id of the ad unit. You can create your unit id from our Portal.
  @param fbPlacementId The Facebook PlacementID is used to request ads from Facebook. You can also set the placementID in our portal. The ID you set in our web portal will replace the ID you set here in future.
- @param videoSupport If the support video ads, set videoSupport  to yes.
+ @param videoSupport DEPRECATED_ATTRIBUTE Mintegral support configuration： https://www.mintegral.net
  @param numAdsRequested The number of ads you would like the native ad manager to retrieve. Max number is 10. If you pass any number bigger than 10, it will be reset to 10.
  @param viewController The UIViewController that will be used to present SKStoreProductViewController
  (iTunes Store product information) or the in-app browser. If not set, it will be the root viewController of your current UIWindow. But it may failed to present our view controller if your rootViewController is presenting other view controller. So set this property is necessary.

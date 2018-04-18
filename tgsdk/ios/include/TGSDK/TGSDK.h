@@ -23,7 +23,8 @@ typedef enum {
     TGAdType3rdPop,
     TGAdType3rdVideo,
     TGADType3rdAward,
-    TGAdType3rdNative
+    TGAdType3rdNative,
+    TGAdType3rdInteract
 }TGAdType;
 
 typedef enum {
@@ -36,6 +37,12 @@ typedef enum {
     TGADDevicePowerIsLow
 } TGAdStatus;
 
+typedef enum {
+    TGNonPayingUser,
+    TGSmallPaymentUser,
+    TGMediumPaymentUser,
+    TGLargePaymentUser
+} TGPayingUser;
 
 @protocol TGPreloadADDelegate <NSObject>
 @optional
@@ -184,6 +191,10 @@ typedef enum {
            AndQuantity:(int)quantity
              AndAmount:(float)amount
         AndGoodsAmount:(int)goodsAmount;
++ (void)tagPayingUser:(TGPayingUser)user
+         WithCurrency:(nullable NSString*)currency
+    AndCurrentAmount:(float)currentAmount
+       AndTotalAmount:(float)totalAmount;
 
 /**************************   测试专用  ******************************/
 + (void)showTestView:(NSString* _Nonnull)scene;

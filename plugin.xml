@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-tgsdk" version="1.6.9">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-tgsdk" version="1.7.2">
     <name>Cordova TGSDK Plugin</name>
     <description>YoMob AD SDK</description>
     <author>yomob</author>
@@ -19,33 +19,30 @@
         <!-- for GooglePlay
         <framework src="src/android/cordova-plugin-tgsdk.gp.gradle" custom="true" type="gradleReference" />
         -->
-        <resource-file src="tgsdk/android/TGSDK.1.6.9.aar" target="libs/TGSDK.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADAdcolony.1.6.9.aar" target="libs/TGSDKADAdcolony.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADAdmob.1.6.9.aar" target="libs/TGSDKADAdmob.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADApplovin.1.6.9.aar" target="libs/TGSDKADApplovin.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADAppnext.1.6.9.aar" target="libs/TGSDKADAppnext.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADCentrixlink.cn.1.6.9.aar" target="libs/TGSDKADCentrixlink.cn.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADCentrixlink.googleplay.1.6.9.aar" target="libs/TGSDKADCentrixlink.googleplay.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADChartboost.1.6.9.aar" target="libs/TGSDKADChartboost.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADDianjoy.1.6.9.aar" target="libs/TGSDKADDianjoy.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADYumi.1.6.9.aar" target="libs/TGSDKADYumi.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADFacebook.1.6.9.aar" target="libs/TGSDKADFacebook.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADInmobi.1.6.9.aar" target="libs/TGSDKADInmobi.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADLeadbolt.1.6.9.aar" target="libs/TGSDKADLeadbolt.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADMobvista.1.6.9.aar" target="libs/TGSDKADMobvista.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADOneway.1.6.9.aar" target="libs/TGSDKADOneway.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADTapjoy.1.6.9.aar" target="libs/TGSDKADTapjoy.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADUnityads.1.6.9.aar" target="libs/TGSDKADUnityads.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADVungle.1.6.9.aar" target="libs/TGSDKADVungle.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADLanmei.1.6.9.aar" target="libs/TGSDKADLanmei.1.6.9.aar" />
-        <resource-file src="tgsdk/android/TGSDKADYoulan.1.6.9.aar" target="libs/TGSDKADYoulan.1.6.9.aar" />
+        <resource-file src="tgsdk/android/TGSDK.1.7.2.aar" target="libs/TGSDK.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADAdcolony.1.7.2.aar" target="libs/TGSDKADAdcolony.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADAdmob.1.7.2.aar" target="libs/TGSDKADAdmob.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADApplovin.1.7.2.aar" target="libs/TGSDKADApplovin.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADCentrixlink.cn.1.7.2.aar" target="libs/TGSDKADCentrixlink.cn.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADChartboost.1.7.2.aar" target="libs/TGSDKADChartboost.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADFacebook.1.7.2.aar" target="libs/TGSDKADFacebook.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADMobvista.1.7.2.aar" target="libs/TGSDKADMobvista.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADOneway.1.7.2.aar" target="libs/TGSDKADOneway.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADTapjoy.1.7.2.aar" target="libs/TGSDKADTapjoy.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADIronsource.1.7.2.aar" target="libs/TGSDKADIronsource.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADUnityads.1.7.2.aar" target="libs/TGSDKADUnityads.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADUniplay.1.7.2.aar" target="libs/TGSDKADUniplay.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADVungle.1.7.2.aar" target="libs/TGSDKADVungle.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADLanmei.1.7.2.aar" target="libs/TGSDKADLanmei.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADYoulan.1.7.2.aar" target="libs/TGSDKADYoulan.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADYouappi.1.7.2.aar" target="libs/TGSDKADYouappi.1.7.2.aar" />
+        <resource-file src="tgsdk/android/TGSDKADGuangdiantong.1.7.2.aar" target="libs/TGSDKADGuangdiantong.1.7.2.aar" />
         
         <resource-file src="tgsdk/android/dagger-2.7.jar" target="libs/dagger-2.7.jar" />
         <resource-file src="tgsdk/android/eventbus-2.2.1.jar" target="libs/eventbus-2.2.1.jar" />
         <resource-file src="tgsdk/android/javax.inject-1.jar" target="libs/javax.inject-1.jar" />
         <resource-file src="tgsdk/android/okhttp-3.4.2.jar" target="libs/okhttp-3.4.2.jar" />
         <resource-file src="tgsdk/android/okio-1.11.0.jar" target="libs/okio-1.11.0.jar" />
-        <resource-file src="tgsdk/android/picasso-2.5.2.jar" target="libs/picasso-2.5.2.jar" />
         <resource-file src="tgsdk/android/rxjava-1.2.0.jar" target="libs/rxjava-1.2.0.jar" />
         <!--
         <resource-file src="tgsdk/android/support-v4-24.1.0.jar" target="libs/support-v4-24.1.0.jar" />
@@ -75,8 +72,6 @@
 			<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 			<uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
-			<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-			<uses-permission android:name="android.permission.GET_TASKS" />
 			<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
         </config-file>
 
@@ -94,41 +89,32 @@
         <header-file src="tgsdk/ios/include/TGSDK/TGSDK.h" />
         <source-file src="src/ios/TGSDKCordova.m" />
         
-        <source-file src="tgsdk/ios/libTGSDK.1.6.9.a" framework="true" />
+        <source-file src="tgsdk/ios/libTGSDK.1.7.2.a" framework="true" />
         
         <framework src="tgsdk/ios/frameworks/AdColony.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/AppLovinSDK.framework" custom="true" />
-        <framework src="tgsdk/ios/frameworks/AppTracker.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/AppnextLib.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/AppnextSDKCore.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/Centrixlink.framework" custom="true" />
-        <framework src="tgsdk/ios/frameworks/ChanceAdSDK.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/Chartboost.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/FBAudienceNetwork.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/FMDB.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/GDTMobSDK.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/GoogleMobileAds.framework" custom="true" />
-        <framework src="tgsdk/ios/frameworks/InMobi.framework" custom="true" />
+        <framework src="tgsdk/ios/frameworks/IronSource.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/MVSDK.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/MVSDKInterstitial.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/MVSDKReward.framework" custom="true" />
-        <framework src="tgsdk/ios/frameworks/OneWaySDK.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/Tapjoy.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/UnityAds.framework" custom="true" />
         <framework src="tgsdk/ios/frameworks/VungleSDK.framework" custom="true" />
         
         
-        <resource-file src="tgsdk/ios/resources/__vungle.db" />
-        <resource-file src="tgsdk/ios/resources/ChanceAdRes.bundle" />
         <resource-file src="tgsdk/ios/resources/TapjoyResources.bundle" />
         <resource-file src="tgsdk/ios/resources/TGADSDK.bundle" />
         <resource-file src="tgsdk/ios/resources/TGStartedIcon.png" />
         <resource-file src="tgsdk/ios/resources/TGUnstartedIcon.png" />
         <resource-file src="tgsdk/ios/resources/UnityAds.bundle" />
-        <resource-file src="tgsdk/ios/resources/vg_close.png" />
-        <resource-file src="tgsdk/ios/resources/vg_cta.png" />
-        <resource-file src="tgsdk/ios/resources/vg_mute_off.png" />
-        <resource-file src="tgsdk/ios/resources/vg_mute_on.png" />
-        <resource-file src="tgsdk/ios/resources/vg_privacy.png" />
         
         <framework src="libc++.tbd" />
         <framework src="libsqlite3.tbd" />
@@ -145,6 +131,7 @@
         <framework src="CoreMedia.framework" />
         <framework src="CoreMotion.framework" />
         <framework src="EventKit.framework" />
+        <framework src="Foundation.framework" />
         <framework src="GLKit.framework" />
         <framework src="iAd.framework" />
         <framework src="MediaPlayer.framework" />
@@ -155,7 +142,9 @@
         <framework src="Social.framework" />
         <framework src="StoreKit.framework" />
         <framework src="SystemConfiguration.framework" />
+        <framework src="WatchConnectivity.framework" />
         <framework src="WebKit.framework" />
         <framework src="JavaScriptCore.framework" />
+        <framework src="UIKit.framework" />
     </platform>
  </plugin>

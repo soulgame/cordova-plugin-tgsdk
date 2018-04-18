@@ -12,9 +12,11 @@
 #import "CentrixlinkProtocol.h"
 #import "CLSLog.h"
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class UIViewController;
+
 
 typedef void (^CentrixLinkADDebugCallBack)(NSString *message, CLSLogLevel level);
 
@@ -23,8 +25,6 @@ typedef void (^CentrixLinkADDebugCallBack)(NSString *message, CLSLogLevel level)
 @property (nonatomic, weak) id<CentrixLinkADDelegate>delegate;
 
 @property (nonatomic, weak) id<CentrixLinkSplashADDelegate>splashADdelegate;
-
-
 
 
 /**
@@ -40,17 +40,20 @@ typedef void (^CentrixLinkADDebugCallBack)(NSString *message, CLSLogLevel level)
 /**
  *  是否有效的预加载广告
  *
- *  @return true 有预加载广告，false 暂无预加载广告
+ *  @return true 有可播放预加载广告，false 暂无可播放预加载广告
  */
-- (BOOL)hasPreloadAD;
-
+- (BOOL)isAdPlayable;
 
 /**
- *  设置是否跟随应用方向
- *
- *  @param enable default = NO;
+ 设置视频广告的展示方向
+
+ @param orientation 视频广告展示方向(UIInterfaceOrientationMaskPortrait / UIInterfaceOrientationMaskLandscape / UIInterfaceOrientationMaskAll = default)
  */
-- (void)setEnableFollowAppOrientation:(BOOL)enable;
+- (void)setPlayAdOrientation:(UIInterfaceOrientationMask)orientation;
+
+
+
+
 
 /**
  *  开屏广告
@@ -58,15 +61,6 @@ typedef void (^CentrixLinkADDebugCallBack)(NSString *message, CLSLogLevel level)
 - (BOOL)playSplashAD;
 
 
-
-/**
- *  调整插屏的布局 (注意：所有参数均为百分比，取值范围:[0 1])
- *  @param top 上边距
- *  @param left 左边距
- *  @param videoScale 短边占比(例如：在竖屏模式下，指的是指定区域的宽占整个屏幕宽的比例，反之横屏模式下就是指定区域的高占整个屏幕高的比例)
- *  @return YES:可以调整、 NO:不可以调整
- */
-- (BOOL)resizeADWithTop:(float)top left:(float)left videoScale:(float)videoScale;
 
 /**
  *   播放视频全屏广告
@@ -79,8 +73,6 @@ typedef void (^CentrixLinkADDebugCallBack)(NSString *message, CLSLogLevel level)
  */
 - (BOOL)playAD:(UIViewController *)ViewController options:(NSDictionary * __nullable)options error:(NSError * __autoreleasing*)error;
 
-
-- (BOOL)playUnFullScreenAD:(UIViewController *)ViewController options:(NSDictionary * __nullable)options error:(NSError * __autoreleasing*)error;
 
 
 /**

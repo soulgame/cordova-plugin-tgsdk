@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger, MVInterstitialAdCategory) {
 /**
  *  Sent when the ad is successfully load , and is ready to be displayed
  */
-- (void) onInterstitialLoadSuccess;
+- (void) onInterstitialLoadSuccess DEPRECATED_ATTRIBUTE;
 - (void) onInterstitialLoadSuccess:(MVInterstitialAdManager *_Nonnull)adManager;
 
 /**
@@ -35,7 +35,7 @@ typedef NS_ENUM(NSInteger, MVInterstitialAdCategory) {
  *
  *  @param error An NSError object with information about the failure.
  */
-- (void) onInterstitialLoadFail:(nonnull NSError *)error;
+- (void) onInterstitialLoadFail:(nonnull NSError *)error DEPRECATED_ATTRIBUTE;
 - (void) onInterstitialLoadFail:(nonnull NSError *)error adManager:(MVInterstitialAdManager *_Nonnull)adManager;
 
 
@@ -51,7 +51,7 @@ typedef NS_ENUM(NSInteger, MVInterstitialAdCategory) {
 /**
  *  Sent when the Interstitial success to open
  */
-- (void) onInterstitialShowSuccess;
+- (void) onInterstitialShowSuccess DEPRECATED_ATTRIBUTE;
 - (void) onInterstitialShowSuccess:(MVInterstitialAdManager *_Nonnull)adManager;
 
 /**
@@ -59,21 +59,21 @@ typedef NS_ENUM(NSInteger, MVInterstitialAdCategory) {
  *
  *  @param error An NSError object with information about the failure.
  */
-- (void) onInterstitialShowFail:(nonnull NSError *)error;
+- (void) onInterstitialShowFail:(nonnull NSError *)error DEPRECATED_ATTRIBUTE;
 - (void) onInterstitialShowFail:(nonnull NSError *)error adManager:(MVInterstitialAdManager *_Nonnull)adManager;
 
 
 /**
  *  Sent when the Interstitial has been clesed from being open, and control will return to your app
  */
-- (void) onInterstitialClosed;
+- (void) onInterstitialClosed DEPRECATED_ATTRIBUTE;
 - (void) onInterstitialClosed:(MVInterstitialAdManager *_Nonnull)adManager;
 
 
 /**
  *  Sent after the Interstitial has been clicked by a user.
  */
-- (void) onInterstitialAdClick;
+- (void) onInterstitialAdClick DEPRECATED_ATTRIBUTE;
 - (void) onInterstitialAdClick:(MVInterstitialAdManager *_Nonnull)adManager;
 
 

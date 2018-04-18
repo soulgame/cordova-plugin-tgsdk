@@ -7,16 +7,15 @@ repositories{
 
 dependencies {
     compile 'com.android.support:support-v4:25.3.1'
-    compile(name:'TGSDK.1.6.9', ext:'aar')
-    compile(name: 'TGSDKADCentrixlink.cn.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADDianjoy.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADYumi.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADOneway.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADVungle.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADLanmei.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADMobvista.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADTapjoy.1.6.9', ext: 'aar')
-    compile(name: 'TGSDKADYoulan.1.6.9', ext: 'aar')
+    compile(name:'TGSDK.1.7.2', ext:'aar')
+    compile(name: 'TGSDKADCentrixlink.cn.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADOneway.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADLanmei.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADMobvista.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADTapjoy.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADYoulan.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADUniplay.1.7.2', ext: 'aar')
+    compile(name: 'TGSDKADGuangdiantong.1.7.2', ext: 'aar')
 }
 
 android {
